@@ -73,6 +73,14 @@ e:\ONLINE SHOP\
 
 ---
 
+## 🌐 Live Website & Public Deployment
+
+- **Live URL:** [https://riyank2408.github.io/mahadev-mobiles/](https://riyank2408.github.io/mahadev-mobiles/)
+- **Secure Checkout Page:** [https://riyank2408.github.io/mahadev-mobiles/checkout.html](https://riyank2408.github.io/mahadev-mobiles/checkout.html)
+- **GitHub Repository:** [https://github.com/Riyank2408/mahadev-mobiles](https://github.com/Riyank2408/mahadev-mobiles)
+
+---
+
 ## 💻 How to Run Locally
 
 Open `index.html` or `checkout.html` in any web browser, or launch a local HTTP server:
