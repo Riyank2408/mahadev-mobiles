@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mahadev Mobiles | Secure Checkout &amp; Order Details</title>
+  <meta name="description" content="Complete your smartphone order at Mahadev Mobiles. Store pickup at Vapi City (Taluka Pardi, Valsad) or local Gujarat delivery with 0% No-Cost EMI and instant trade-in discount."/>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "surface-dim": "#f8fafc",
+          "primary": "#0f172a",
+          "primary-amber": "#f59e0b",
+          "primary-amber-dark": "#d97706",
+          "primary-amber-light": "#fef3c7",
+          "emerald-accent": "#059669",
+          "surface-container": "#ffffff",
+          "surface-variant": "#f1f5f9",
+          "on-surface": "#0f172a",
+          "on-surface-variant": "#475569",
+          "on-surface-muted": "#64748b",
+          "outline-variant": "#e2e8f0"
+        },
+        borderRadius: {
+          "DEFAULT": "0.5rem",
+          "lg": "0.75rem",
+          "xl": "1rem",
+          "2xl": "1.25rem",
+          "3xl": "1.75rem",
+          "full": "9999px"
+        },
+        fontFamily: {
+          "body": ["Plus Jakarta Sans", "sans-serif"],
+          "heading": ["Outfit", "Plus Jakarta Sans", "sans-serif"],
+          "mono": ["JetBrains Mono", "monospace"]
+        }
+      }
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-slate-50 font-body text-slate-900 antialiased selection:bg-amber-200 min-h-screen flex flex-col">
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="fixed top-24 right-6 z-50 transform -translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-white border border-slate-200 text-slate-900 px-5 py-3.5 rounded-xl flex items-center gap-3 shadow-xl" id="toast">
+    <span class="material-symbols-outlined text-amber-500 text-xl">check_circle</span>
+    <span class="text-xs font-semibold tracking-wide text-slate-800" id="toast-text">Action completed successfully</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-[0_2px_15px_-3px_rgba(15,23,42,0.06)] transition-all">
+    <div class="h-16 sm:h-20 w-full px-4 sm:px-6 lg:px-8 max-w-[1380px] mx-auto flex items-center justify-between gap-3 md:gap-6">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none flex-shrink-0" href="index.html" aria-label="Mahadev Mobiles Home">
+        <div class="h-10 w-10 sm:h-11 sm:w-11 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200 shadow-xs transition-transform duration-200 group-hover:scale-105 group-hover:border-amber-400 flex-shrink-0 overflow-hidden">
+          <img alt="Mahadev Mobiles Store Logo" class="h-full w-full object-contain rounded-lg" src="assets/logo-white.jpg" onerror="this.onerror=null; this.src='assets/logo.svg'"/>
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-slate-900 uppercase leading-none">MAHADEV <span class="text-amber-500 font-extrabold">MOBILES</span></span>
+          <span class="text-[9.5px] sm:text-[10px] tracking-wider text-slate-500 font-medium uppercase mt-1 leading-none whitespace-nowrap flex items-center gap-1.5">
+            <span>Vapi City Flagship</span>
+            <span class="hidden sm:inline w-1 h-1 rounded-full bg-slate-300"></span>
+            <span class="hidden sm:inline text-emerald-600 font-semibold">Official Warranty</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold text-slate-600">
+        <a class="px-3 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100/90 active:bg-slate-200/60 transition-all whitespace-nowrap" href="index.html">Showroom</a>
+        <a class="px-3 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100/90 active:bg-slate-200/60 transition-all whitespace-nowrap" href="index.html#how">How it Works</a>
+        <a class="px-3 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100/90 active:bg-slate-200/60 transition-all whitespace-nowrap" href="index.html#phones">Phones</a>
+        <a class="px-3 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100/90 active:bg-slate-200/60 transition-all whitespace-nowrap" href="index.html#tradein">Exchange Value</a>
+        <a class="px-3 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100/90 active:bg-slate-200/60 transition-all whitespace-nowrap" href="index.html#stores">Stores</a>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-amber-900 bg-amber-50 border border-amber-200/90 whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px] text-amber-600">lock</span>
+          <span>Secure Checkout</span>
+        </span>
+      </nav>
+
+      <!-- Action items -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <!-- WhatsApp Button -->
+        <a class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 active:scale-95 transition-all shadow-sm shadow-emerald-600/20 whitespace-nowrap" href="https://wa.me/918160187482?text=Hello%20Mahadev%20Mobiles,%20I'm%20on%20the%20checkout%20page%20and%20have%20a%20question%20before%20ordering" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]">chat</span>
+          <span class="hidden sm:inline">Help on WhatsApp</span>
+          <span class="sm:hidden">WhatsApp</span>
+        </a>
+
+        <!-- Back to Store Button -->
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-slate-200 bg-slate-50/80 text-slate-700 hover:bg-slate-100 active:bg-slate-200 text-xs font-bold transition-all whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px] text-slate-500">storefront</span>
+          <span class="hidden sm:inline">Back to Store</span>
+          <span class="sm:hidden">Store</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="lg:hidden inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-slate-200 bg-slate-50/90 text-slate-700 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500/20">
+          <span id="mobile-menu-icon" class="material-symbols-outlined text-[22px]">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER & BACKDROP -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/50 backdrop-blur-xs z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden" aria-hidden="true"></div>
+
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-between overflow-y-auto" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div>
+      <!-- Drawer Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50/80">
+        <div class="flex items-center gap-2.5">
+          <div class="h-9 w-9 rounded-lg bg-white p-1 flex items-center justify-center border border-slate-200 shadow-xs flex-shrink-0">
+            <img alt="Mahadev Mobiles Logo" class="h-full w-full object-contain rounded" src="assets/logo-white.jpg" onerror="this.onerror=null; this.src='assets/logo.svg'"/>
+          </div>
+          <div>
+            <span class="font-heading text-sm font-bold tracking-tight text-slate-900 uppercase block">Mahadev <span class="text-amber-500">Mobiles</span></span>
+            <span class="text-[9px] tracking-wider text-slate-500 font-semibold uppercase block">Vapi City Flagship</span>
+          </div>
+        </div>
+        <button id="mobile-menu-close" type="button" aria-label="Close navigation menu" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-200/70 transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Store Status Strip in Drawer -->
+      <div class="mx-4 sm:mx-5 mt-4 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center gap-2.5 text-xs text-emerald-900 font-medium">
+        <span class="relative flex h-2 w-2 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <div>
+          <div class="font-bold text-emerald-800 text-[11px] uppercase tracking-wide">Store Open Today</div>
+          <div class="text-[11px] text-emerald-700">10:00 AM – 10:00 PM • Vapi City, Valsad</div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <nav class="p-4 space-y-1">
+        <a href="index.html" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-amber-500">home</span>
+          <span>Showroom Home</span>
+        </a>
+        <a href="index.html#how" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-slate-500">info</span>
+          <span>How Buying Works</span>
+        </a>
+        <a href="index.html#phones" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-slate-500">smartphone</span>
+          <span>Flagship Phones</span>
+        </a>
+        <a href="index.html#tradein" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-emerald-600">currency_exchange</span>
+          <span>Exchange Value</span>
+        </a>
+        <a href="index.html#stores" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-slate-500">storefront</span>
+          <span>Store Locations</span>
+        </a>
+        <a href="index.html#faq" class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold text-sm transition-colors">
+          <span class="material-symbols-outlined text-[20px] text-slate-500">help_outline</span>
+          <span>Store FAQ</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="p-4 sm:p-5 border-t border-slate-200 bg-slate-50/70 space-y-2">
+      <a href="https://wa.me/918160187482?text=Hello%20Mahadev%20Mobiles,%20I'm%20on%20the%20checkout%20page%20and%20have%20a%20question" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Chat on WhatsApp</span>
+      </a>
+      <a href="tel:+918160187482" class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-xs hover:bg-slate-100 transition-colors">
+        <span class="material-symbols-outlined text-[18px] text-slate-500">call</span>
+        <span>Call Store: +91 81601 87482</span>
+      </a>
+      <p class="text-[10px] text-center text-slate-400 pt-0.5">
+        Vapi City, Taluka Pardi, District Valsad, Gujarat
+      </p>
+    </div>
+  </div>
+
+  <main class="w-full pt-16 sm:pt-20 flex-grow bg-slate-50">
+    <div class="flex flex-col w-full">
+      
+      <!-- Top Assurance Strip -->
+      <div class="w-full bg-white py-2.5 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+        <div class="max-w-[1380px] mx-auto flex flex-wrap items-center justify-between gap-2.5 sm:gap-4 text-slate-600 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+            <span class="text-slate-900 font-bold">Mahadev Mobiles Vapi City</span>
+            <span class="hidden sm:inline text-slate-300">•</span>
+            <span class="hidden sm:inline text-slate-600">Official Brand Warranty with Original GST Tax Invoice</span>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-4 text-slate-700 text-xs font-medium">
+            <span class="flex items-center gap-1 text-emerald-700 font-bold whitespace-nowrap">
+              <span class="material-symbols-outlined text-[16px]">verified</span> Order Reference #MM-9842
+            </span>
+            <span class="hidden md:inline text-slate-300">•</span>
+            <span class="hidden md:inline text-slate-500">Need help? Call +91 81601 87482</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Container -->
+      <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-8 lg:py-10">
+        
+        <!-- Breadcrumb & Header Stepper -->
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-3">
+            <a href="index.html" class="hover:text-slate-900 transition-colors">Home</a>
+            <span>/</span>
+            <span>Flagship Phones</span>
+            <span>/</span>
+            <span class="text-slate-900 font-bold">Checkout</span>
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 bg-white p-6 sm:p-7 rounded-2xl shadow-xs border border-slate-200">
+            <div>
+              <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight font-heading">Complete Your Order</h1>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Review your phone specs, select pickup or same-day local delivery, and pay securely.</p>
+            </div>
+
+            <!-- 3-Stage Progress Stepper -->
+            <div class="flex items-center gap-3 self-start lg:self-auto bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-200 text-xs">
+              <div class="flex items-center gap-1.5 font-bold text-slate-900">
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px]">1</span>
+                <span>Contact</span>
+              </div>
+              <span class="w-4 h-[1px] bg-slate-300"></span>
+              <div class="flex items-center gap-1.5 font-bold text-slate-900">
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-[11px]">2</span>
+                <span>Delivery</span>
+              </div>
+              <span class="w-4 h-[1px] bg-slate-300"></span>
+              <div class="flex items-center gap-1.5 font-semibold text-slate-500">
+                <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-[11px]">3</span>
+                <span>Payment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual Column Split Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- LEFT COLUMN: Contact / Delivery / Payment (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- SECTION 1: Contact Information -->
+            <div class="bg-white rounded-2xl shadow-xs p-6 sm:p-7 space-y-5 border border-slate-200">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 pb-3.5 border-b border-slate-100">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold">1</span>
+                  <h2 class="text-base sm:text-lg font-bold text-slate-900 font-heading">Contact Information</h2>
+                </div>
+                <span class="text-xs text-slate-500 font-medium">Used for GST invoice &amp; pickup verification</span>
+              </div>
+
+              <!-- Quick Sign-In Options -->
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span class="text-xs font-semibold text-slate-600 block">Autofill with your account:</span>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white shadow-xs hover:bg-slate-100 transition-colors text-xs text-slate-800 font-semibold border border-slate-200" type="button" onclick="quickFill('google')">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path><path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z" fill="#4285F4"></path><path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.8.7 5.5 1.9 7.8l3.7-2.9c-.2-.7-.3-1.4-.3-2.1z" fill="#FBBC05"></path><path d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 17c1.8 3.6 5.6 6.5 10.1 6.5z" fill="#34A853"></path></svg>
+                    Google
+                  </button>
+                  <button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white shadow-xs hover:bg-slate-100 transition-colors text-xs text-slate-800 font-semibold border border-slate-200" type="button" onclick="quickFill('apple')">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.77-7.96-12.24-14.64-6.61-9.9-11.75-20.9-15.42-33-3.66-12.1-5.5-23.7-5.5-34.8 0-14.1 3.52-25.9 10.57-35.4 7.05-9.5 16-14.3 26.85-14.4 5.3 0 11.13 1.4 17.5 4.2 6.36 2.8 10.15 4.3 11.37 4.3 1.05 0 5.08-1.5 12.09-4.5 7.01-3 13.12-4.3 18.34-3.9 13.62.9 24.31 5.9 32.07 15-11.83 7.1-17.65 16.9-17.46 29.4.2 9.8 4.02 18 11.46 24.6 7.44 6.6 16.48 10.4 27.12 11.4-2.22 6.8-5.06 13.8-8.52 21.01zM119.22 33.15c0-7.3 2.66-14.2 7.98-20.7 5.32-6.5 11.96-10.9 19.92-13.2.73 7.5-1.57 14.8-6.9 21.9-5.33 7.1-12.33 11.1-21 12z"></path></svg>
+                    Apple
+                  </button>
+                  <button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white shadow-xs hover:bg-slate-100 transition-colors text-xs text-slate-800 font-semibold border border-slate-200" type="button" onclick="quickFill('otp')">
+                    <span class="material-symbols-outlined text-[15px]">sms</span>
+                    Mobile OTP
+                  </button>
+                </div>
+              </div>
+
+              <!-- Form Fields -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-slate-700">Full Name</label>
+                  <input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-slate-900 text-sm focus:bg-white focus:outline-none border border-slate-200 transition-colors" id="inp-name" placeholder="Your Full Name" type="text" value="Vikramaditya Roy"/>
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-slate-700">Email Address (for Invoice)</label>
+                  <input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-slate-900 text-sm focus:bg-white focus:outline-none border border-slate-200 transition-colors" id="inp-email" placeholder="name@domain.com" type="email" value="v.roy@royholdings.in"/>
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-slate-700">Mobile Number (+91)</label>
+                  <div class="flex gap-2">
+                    <div class="relative flex-1">
+                      <span class="absolute left-3 top-2.5 text-xs font-bold text-slate-400">+91</span>
+                      <input class="w-full pl-11 pr-3.5 py-2.5 rounded-xl bg-slate-50 text-slate-900 text-sm focus:bg-white focus:outline-none border border-slate-200 transition-colors" id="inp-phone" type="tel" value="98490 28190"/>
+                    </div>
+                    <button class="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-200 transition-colors" type="button" onclick="showToast('OTP verified successfully')">
+                      Verified ✓
+                    </button>
+                  </div>
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-bold text-slate-700">GST Number (Optional, for business input)</label>
+                  <input class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 text-slate-900 text-sm focus:bg-white focus:outline-none border border-slate-200 transition-colors font-mono uppercase" placeholder="36AAAAA0000A1Z5" type="text" value="36AAACM8492K1Z9"/>
+                </div>
+              </div>
+
+              <!-- WhatsApp Updates Checkbox -->
+              <div class="p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3 border border-slate-200">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-emerald-600 text-2xl">chat</span>
+                  <div>
+                    <p class="text-xs font-bold text-slate-900">Send bill and order status on WhatsApp</p>
+                    <p class="text-[11px] text-slate-500">We'll message you with your invoice copy, IMEI details, and pickup readiness.</p>
+                  </div>
+                </div>
+                <input checked="" class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500" type="checkbox"/>
+              </div>
+            </div>
+
+            <!-- SECTION 2: Delivery & Pickup Options -->
+            <div class="bg-white rounded-2xl shadow-xs p-6 sm:p-7 space-y-5 border border-slate-200">
+              <div class="flex items-center gap-2.5 pb-3.5 border-b border-slate-100">
+                <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold">2</span>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900 font-heading">How would you like to receive your phone?</h2>
+              </div>
+
+              <!-- Radio Options -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                <!-- Option A: Store Pickup -->
+                <label class="p-4 rounded-xl bg-amber-50/50 cursor-pointer border-2 border-amber-500 flex flex-col justify-between space-y-2.5 shadow-xs">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <input checked="" class="w-4 h-4 text-amber-600 accent-amber-600" name="handover_method" type="radio" value="pickup"/>
+                      <span class="text-sm font-bold text-slate-900">Store Pickup (Vapi City Showroom)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold">
+                      Ready Today
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-600 pl-6 leading-relaxed">
+                    Collect from our Vapi City showroom (Taluka Pardi, District Valsad). We unbox the sealed unit with you, apply free screen protection, and migrate your data.
+                  </p>
+                  <div class="pl-6 text-[11px] font-bold text-emerald-700 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                    <span>Free screen protector &amp; data transfer included</span>
+                  </div>
+                </label>
+
+                <!-- Option B: Local Express Delivery -->
+                <label class="p-4 rounded-xl bg-slate-50 cursor-pointer border border-slate-200 hover:border-slate-300 flex flex-col justify-between space-y-2.5 transition-colors">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <input class="w-4 h-4 text-amber-600 accent-amber-600" name="handover_method" type="radio" value="delivery"/>
+                      <span class="text-sm font-bold text-slate-900">Same-Day Local Delivery</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                      Vapi &amp; Valsad District
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-600 pl-6 leading-relaxed">
+                    Hand-delivered safely to your address by our store executive. Delivered within 3 hours across Vapi, Pardi &amp; Valsad.
+                  </p>
+                  <div class="pl-6 text-[11px] font-semibold text-slate-500 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-emerald-600">verified</span>
+                    <span>Sealed box verified via OTP at doorstep</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Store Address Confirmation -->
+              <div class="p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3 border border-slate-200">
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-slate-700 text-xl">storefront</span>
+                  <div>
+                    <p class="text-xs font-bold text-slate-900" id="store-location-title">Vapi City Main Showroom</p>
+                    <p class="text-[11px] text-slate-500" id="store-location-desc">Vapi City, Taluka Pardi, District Valsad, Gujarat (Open 10 AM – 10 PM)</p>
+                  </div>
+                </div>
+                <button class="px-3 py-1.5 rounded-lg bg-white text-slate-800 text-xs font-bold hover:bg-slate-100 border border-slate-200 shadow-xs" type="button" onclick="changeStoreLocation()">
+                  Change Store
+                </button>
+              </div>
+            </div>
+
+            <!-- SECTION 3: Payment Options -->
+            <div class="bg-white rounded-2xl shadow-xs p-6 sm:p-7 space-y-5 border border-slate-200">
+              <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold">3</span>
+                  <h2 class="text-base sm:text-lg font-bold text-slate-900 font-heading">Choose Payment Method</h2>
+                </div>
+                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  100% Bank Encrypted
+                </span>
+              </div>
+
+              <!-- Payment Tabs -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
+                <button class="pay-tab py-2.5 px-3 rounded-xl text-center bg-slate-900 text-white transition-all shadow-xs" id="tab-upi" onclick="switchPay('upi')" type="button">
+                  UPI / QR Code
+                </button>
+                <button class="pay-tab py-2.5 px-3 rounded-xl text-center bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" id="tab-cards" onclick="switchPay('cards')" type="button">
+                  Credit / Debit Card
+                </button>
+                <button class="pay-tab py-2.5 px-3 rounded-xl text-center bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" id="tab-emi" onclick="switchPay('emi')" type="button">
+                  0% No-Cost EMI
+                </button>
+                <button class="pay-tab py-2.5 px-3 rounded-xl text-center bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" id="tab-net" onclick="switchPay('net')" type="button">
+                  Net Banking
+                </button>
+              </div>
+
+              <!-- Panel 1: UPI Pay -->
+              <div class="pay-panel space-y-3.5" id="panel-upi">
+                <div class="p-4 rounded-xl bg-slate-50 space-y-3 border border-slate-200">
+                  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="space-y-1 text-center sm:text-left">
+                      <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold inline-block">
+                        Instant ₹5,000 Bank Discount Pre-Applied
+                      </span>
+                      <h4 class="text-sm font-bold text-slate-900">Scan QR Code with Any UPI App</h4>
+                      <p class="text-xs text-slate-500">Google Pay, PhonePe, Paytm, CRED or BHIM</p>
+                    </div>
+
+                    <!-- Mock QR Code -->
+                    <div class="p-2.5 bg-white rounded-xl shadow-xs flex flex-col items-center border border-slate-200">
+                      <svg class="w-24 h-24 text-slate-900" fill="currentColor" viewBox="0 0 100 100">
+                        <path d="M0 0h36v36H0zM8 8h20v20H8zm56-8h36v36H64zM72 8h20v20H72zM0 64h36v36H0zM8 72h20v20H8zm44-64h8v8h-8zm0 16h8v16h-8zm8 8h12v8H60zm0 16h8v8h-8zm-8 8h8v12h-8zm16 8h8v12h-8zm12-8h16v8H80zm0 16h8v16H80zm8-8h12v8H88zM44 44h8v8h-8zm16-8h8v8h-8zm-8 44h8v12h-8zm16-12h8v8h-8zm-24 4h8v16h-8zm40-12h8v8h-8zm-8 28h16v8H76zm8-20h8v8H84z"></path>
+                      </svg>
+                      <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wider font-mono mt-1">mahadevmobiles@hdfc</span>
+                    </div>
+                  </div>
+
+                  <!-- VPA Input -->
+                  <div class="pt-1">
+                    <label class="text-xs font-bold text-slate-700 mb-1 block">Or enter your UPI ID:</label>
+                    <div class="flex gap-2">
+                      <input class="flex-1 px-3.5 py-2.5 rounded-xl bg-white text-slate-900 text-xs focus:outline-none border border-slate-200" placeholder="yourname@upi / 9876543210@paytm" type="text" value="vikramroy@oksbi"/>
+                      <button class="px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition-colors" type="button" onclick="showToast('Payment request sent to your UPI app!')">
+                        Send Request
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 2: Cards -->
+              <div class="pay-panel hidden space-y-3.5" id="panel-cards">
+                <div class="p-4 rounded-xl bg-slate-50 space-y-3 border border-slate-200">
+                  <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-700">Card Number</label>
+                    <div class="relative">
+                      <input class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-900 font-mono text-xs tracking-wider focus:outline-none border border-slate-200" placeholder="4242 •••• •••• 9012" type="text" value="4532 8920 1839 9012"/>
+                      <span class="absolute right-3 top-2.5 text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">VISA / MC</span>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                      <label class="text-xs font-bold text-slate-700">Expiry</label>
+                      <input class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-900 font-mono text-xs focus:outline-none border border-slate-200" placeholder="MM / YY" type="text" value="08/29"/>
+                    </div>
+                    <div class="space-y-1">
+                      <label class="text-xs font-bold text-slate-700">CVV</label>
+                      <input class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-900 font-mono text-xs focus:outline-none border border-slate-200" maxlength="4" placeholder="•••" type="password" value="842"/>
+                    </div>
+                  </div>
+                  <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-700">Name on Card</label>
+                    <input class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-900 text-xs focus:outline-none border border-slate-200" placeholder="Cardholder Name" type="text" value="VIKRAMADITYA ROY"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3: EMI -->
+              <div class="pay-panel hidden space-y-3.5" id="panel-emi">
+                <div class="p-4 rounded-xl bg-slate-50 space-y-3 border border-slate-200">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h4 class="text-sm font-bold text-slate-900">0% No-Cost EMI Plans</h4>
+                      <p class="text-xs text-slate-500">Zero processing fee on partner credit &amp; debit cards</p>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">Pre-Approved</span>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                    <div class="p-3 rounded-xl bg-white shadow-xs border-2 border-amber-500 cursor-pointer">
+                      <span class="text-[11px] font-bold text-slate-500 block">HDFC Bank</span>
+                      <div class="my-1.5">
+                        <span class="text-lg font-bold text-slate-900 font-mono">₹4,183</span>
+                        <span class="text-xs text-slate-500">/mo x 24</span>
+                      </div>
+                      <span class="text-[10px] text-emerald-700 font-bold">0% Interest</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white shadow-xs border border-slate-200 cursor-pointer hover:border-amber-500 transition-colors">
+                      <span class="text-[11px] font-bold text-slate-500 block">ICICI Bank</span>
+                      <div class="my-1.5">
+                        <span class="text-lg font-bold text-slate-900 font-mono">₹8,366</span>
+                        <span class="text-xs text-slate-500">/mo x 12</span>
+                      </div>
+                      <span class="text-[10px] text-emerald-700 font-bold">0% Interest</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white shadow-xs border border-slate-200 cursor-pointer hover:border-amber-500 transition-colors">
+                      <span class="text-[11px] font-bold text-slate-500 block">Bajaj Finserv</span>
+                      <div class="my-1.5">
+                        <span class="text-lg font-bold text-slate-900 font-mono">₹16,733</span>
+                        <span class="text-xs text-slate-500">/mo x 6</span>
+                      </div>
+                      <span class="text-[10px] text-emerald-700 font-bold">No Down Payment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 4: Net Banking -->
+              <div class="pay-panel hidden space-y-3.5" id="panel-net">
+                <div class="p-4 rounded-xl bg-slate-50 space-y-2 border border-slate-200">
+                  <label class="text-xs font-bold text-slate-700 block">Select Your Bank</label>
+                  <select class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-900 text-xs focus:outline-none border border-slate-200">
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>State Bank of India (SBI)</option>
+                    <option>Axis Bank</option>
+                    <option>Kotak Mahindra Bank</option>
+                  </select>
+                  <p class="text-[11px] text-slate-500">You will be securely redirected to your bank's login page to authorize payment.</p>
+                </div>
+              </div>
+
+              <!-- Pay CTA Button -->
+              <div class="pt-2 space-y-2.5">
+                <button class="w-full py-4 px-6 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-base font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-98" id="btn-complete-purchase" onclick="executePurchase()" type="button">
+                  <span class="material-symbols-outlined text-xl">lock</span>
+                  <span>Pay ₹1,00,400 Securely</span>
+                </button>
+
+                <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-slate-500 text-xs pt-1">
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-emerald-600">verified_user</span>
+                    256-Bit Bank Encryption
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-emerald-600">shield</span>
+                    Official GST Retail Invoice
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-emerald-600">assignment_return</span>
+                    Immediate Store Replacement
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Order Summary & Store Guarantees (5 Cols) -->
+          <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+            
+            <!-- ORDER SUMMARY CARD -->
+            <div class="bg-white rounded-2xl shadow-xs p-6 space-y-5 border border-slate-200">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <span class="text-xs uppercase tracking-wider text-slate-500 font-bold">Your Order</span>
+                <span class="text-xs text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> In Stock Today
+                </span>
+              </div>
+
+              <!-- Product Item Tile -->
+              <div class="flex gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="w-20 h-20 rounded-lg bg-white p-1.5 flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-200">
+                  <img class="w-full h-full object-contain" alt="Apple iPhone 15 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1mrR-ZqWvi3FoqSHXUHKZYPbHHf0MqTVe1knvhFcPnLB8QAvZo9OilFN0GeZbuXsh5n0mlAiSYTeFi-AV5Kp_z5yGs6zOUaMR4P3qBem8AqieNQx1p2ke9wu2aP3h820oOlf0ZaTI3X0KU9etk5lh_FrGtabx4DeDzhD0WTorPzmxwUYiSFsXpkRW9jYSLYCDJRUTFD1wVNfCKWxt4nlHLEcFo87_VFeLV7eXA1Ul17rWYp7IsuT7"/>
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <span class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Official India Unit</span>
+                    <h3 class="text-base font-bold text-slate-900 font-heading">iPhone 15 Pro Max</h3>
+                    <p class="text-xs text-slate-500">256GB • Desert Natural Titanium</p>
+                  </div>
+                  <div class="flex items-center justify-between text-xs text-slate-600">
+                    <span>Qty: 1</span>
+                    <span class="text-emerald-700 font-bold">Factory Sealed</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Price Breakdown Ledger -->
+              <div class="space-y-2.5 text-xs">
+                <div class="flex items-center justify-between text-slate-600">
+                  <span>Showroom MRP</span>
+                  <span class="font-mono text-slate-900 font-semibold">₹1,59,900</span>
+                </div>
+                <div class="flex items-center justify-between text-slate-600">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                    Instant Store Discount
+                  </span>
+                  <span class="font-mono text-amber-700 font-bold">-₹10,000</span>
+                </div>
+                <div class="flex items-center justify-between text-slate-600">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Exchange Credit (iPhone 13 Pro 128GB)
+                  </span>
+                  <span class="font-mono text-emerald-700 font-bold">-₹49,500</span>
+                </div>
+
+                <!-- Free Welcome Pack -->
+                <div class="p-3 rounded-xl bg-slate-50 space-y-1 mt-2 border border-slate-200">
+                  <div class="flex items-center justify-between text-xs font-bold text-slate-900">
+                    <span class="flex items-center gap-1 text-amber-800">
+                      <span class="material-symbols-outlined text-[15px]">card_giftcard</span>
+                      Free Store Welcome Pack
+                    </span>
+                    <span class="text-emerald-700 font-bold">Free (Worth ₹4,999)</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500">Includes 9H tempered glass, clear case, and full data migration service in-store.</p>
+                </div>
+
+                <!-- Store Promo Code -->
+                <div class="pt-1.5">
+                  <div class="flex gap-2">
+                    <input class="flex-1 px-3 py-2 rounded-xl bg-slate-50 text-slate-900 text-xs focus:bg-white focus:outline-none border border-slate-200 font-mono uppercase" id="coupon-code" placeholder="ENTER PROMO CODE" value="MAHADEV5000"/>
+                    <button class="px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition-colors" onclick="showToast('Promo code MAHADEV5000 is active!')">
+                      Apply
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Total Amount Due -->
+                <div class="pt-3 border-t border-slate-200">
+                  <div class="flex items-baseline justify-between">
+                    <div>
+                      <span class="text-xs uppercase tracking-wider text-slate-500 font-bold">Total Amount Due</span>
+                      <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">₹1,00,400</div>
+                    </div>
+                    <div class="text-right">
+                      <span class="text-[11px] text-slate-500">or 0% EMI from</span>
+                      <div class="text-sm font-bold text-amber-700 font-mono">₹4,183 / mo</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between text-emerald-800 text-xs font-bold mt-2.5 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                    <span>You're saving today</span>
+                    <span>₹59,500 off official MRP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STORE GUARANTEES CARD -->
+            <div class="bg-white rounded-2xl shadow-xs p-6 space-y-4 border border-slate-200">
+              <div class="flex items-center gap-2 pb-2.5 border-b border-slate-100">
+                <span class="material-symbols-outlined text-amber-500 text-xl">verified</span>
+                <h3 class="text-sm font-bold text-slate-900 font-heading">Mahadev Mobiles Customer Guarantees</h3>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-600">
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-600 mt-0.5 flex-shrink-0">check_circle</span>
+                  <span><strong>1-Year Brand Warranty:</strong> Direct support at any authorized Apple India service center across the country.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-600 mt-0.5 flex-shrink-0">check_circle</span>
+                  <span><strong>Sealed Unit Opened Before You:</strong> Verify IMEI and seal authenticity with our staff at the counter.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-600 mt-0.5 flex-shrink-0">check_circle</span>
+                  <span><strong>Full Data Migration:</strong> WhatsApp chats, contacts, photos, and apps safely transferred in 20 minutes.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-600 mt-0.5 flex-shrink-0">check_circle</span>
+                  <span><strong>Transparent Trade-In:</strong> Old phone wiped clean with on-the-spot price adjustment.</span>
+                </li>
+              </ul>
+
+              <div class="pt-1">
+                <a href="https://wa.me/918160187482?text=Hi%20Mahadev%20Mobiles,%20I'm%20checking%20on%20my%20order%20MM-9842" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+                  <span class="material-symbols-outlined text-base text-emerald-600">chat</span>
+                  <span>Have questions? Talk to our store manager</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER CONFIRMATION MODAL -->
+      <div class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4" id="success-modal">
+        <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-7 text-center space-y-5 border border-slate-200 transform scale-95 transition-all">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+            <span class="material-symbols-outlined text-3xl">check_circle</span>
+          </div>
+          <div>
+            <span class="px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">Order Placed Successfully!</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2 font-heading">We've Reserved Your Phone</h3>
+            <p class="text-xs text-slate-600 mt-1">Your iPhone 15 Pro Max (256GB Desert Titanium) is reserved for you at our Vapi City store.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-left space-y-1.5 text-xs text-slate-700">
+            <div class="flex justify-between"><span>Customer Name:</span> <strong class="text-slate-900">Vikramaditya Roy</strong></div>
+            <div class="flex justify-between"><span>Total Settled:</span> <strong class="text-emerald-700 font-bold">₹1,00,400</strong></div>
+            <div class="flex justify-between"><span>Pickup Location:</span> <strong class="text-slate-900">Vapi City Showroom (Taluka Pardi, Valsad)</strong></div>
+            <div class="flex justify-between"><span>Confirmation SMS:</span> <strong class="text-slate-900">Sent to +91 98490 28190</strong></div>
+          </div>
+          <div class="flex gap-2.5 pt-1">
+            <a href="index.html" class="flex-1 py-3 px-4 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition-colors">
+              Return to Store
+            </a>
+            <a href="https://wa.me/918160187482?text=Hello%20Mahadev%20Mobiles,%20my%20order%20MM-9842%20is%20placed.%20I'm%20visiting%20the%20store%20today" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">chat</span> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- STORE FOOTER -->
+  <footer class="w-full bg-slate-950 text-slate-300 mt-20 border-t border-slate-800">
+    <div class="w-full px-4 sm:px-8 max-w-[1380px] mx-auto py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="h-9 w-9 rounded-xl bg-white p-0.5 flex items-center justify-center border border-slate-200 shadow-sm overflow-hidden">
+              <img alt="Mahadev Mobiles" class="h-full w-full object-contain rounded-lg" src="assets/logo-white.jpg" onerror="this.onerror=null; this.src='assets/logo.svg'"/>
+            </div>
+            <span class="text-base font-bold text-white tracking-tight font-heading uppercase">MAHADEV <span class="text-amber-400">MOBILES</span></span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Authorized multi-brand flagship smartphone retailer in Vapi City, Taluka Pardi, District Valsad, Gujarat. Genuine sealed devices with official brand warranties and transparent trade-in pricing.
+          </p>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold text-white font-heading uppercase tracking-wider text-amber-400">Top Brands</h4>
+          <ul class="space-y-1.5 text-xs text-slate-400">
+            <li><a class="hover:text-white transition-colors" href="index.html#inspector">Apple iPhone 15 Series</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#showcase">Samsung Galaxy S24 Series</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#showcase">Google Pixel 8 &amp; 8 Pro</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#finder">OnePlus 12 5G</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold text-white font-heading uppercase tracking-wider text-amber-400">Showroom Address</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Vapi City, Taluka Pardi, District Valsad<br/>
+            Gujarat 396191, India<br/>
+            Open: Mon – Sun, 10:00 AM – 10:00 PM
+          </p>
+          <p class="text-xs text-slate-300 font-mono">+91 81601 87482</p>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold text-white font-heading uppercase tracking-wider text-amber-400">Guarantees</h4>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px] text-amber-400">verified</span>
+              <span>100% Sealed</span>
+            </div>
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px] text-amber-400">receipt_long</span>
+              <span>GST Invoice</span>
+            </div>
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px] text-amber-400">shield</span>
+              <span>OEM Warranty</span>
+            </div>
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px] text-amber-400">lock</span>
+              <span>256-Bit SSL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 border-t border-slate-800/80">
+        <p>© 2026 Mahadev Mobiles. All brand names are trademarks of their respective owners.</p>
+        <div class="flex items-center gap-4">
+          <span>Vapi City Flagship Branch</span>
+          <span>Valsad, Gujarat, India</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT SCRIPTS -->
+  <script>
+    function switchPay(method) {
+      document.querySelectorAll('.pay-panel').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.pay-tab').forEach(t => {
+        t.classList.remove('bg-slate-900', 'text-white', 'shadow-xs');
+        t.classList.add('bg-slate-100', 'text-slate-700');
+      });
+      
+      const activePanel = document.getElementById('panel-' + method);
+      const activeTab = document.getElementById('tab-' + method);
+      if (activePanel) activePanel.classList.remove('hidden');
+      if (activeTab) {
+        activeTab.classList.remove('bg-slate-100', 'text-slate-700');
+        activeTab.classList.add('bg-slate-900', 'text-white', 'shadow-xs');
+      }
+    }
+
+    function quickFill(provider) {
+      if (provider === 'google') {
+        document.getElementById('inp-name').value = 'Vikramaditya Roy';
+        document.getElementById('inp-email').value = 'vikram.roy.work@gmail.com';
+        showToast('Google account details filled');
+      } else if (provider === 'apple') {
+        document.getElementById('inp-name').value = 'Vikramaditya Roy';
+        document.getElementById('inp-email').value = 'v.roy@icloud.com';
+        showToast('Apple ID details filled');
+      } else {
+        showToast('OTP sent to +91 98490 28190');
+      }
+    }
+
+    function changeStoreLocation() {
+      const title = document.getElementById('store-location-title');
+      const desc = document.getElementById('store-location-desc');
+      if (title.textContent.includes('Vapi City')) {
+        title.textContent = 'Pardi Branch (Valsad)';
+        desc.textContent = 'Taluka Pardi, District Valsad, Gujarat (Open 10 AM – 10 PM)';
+        showToast('Switched to Pardi branch');
+      } else {
+        title.textContent = 'Vapi City Main Showroom';
+        desc.textContent = 'Vapi City, Taluka Pardi, District Valsad, Gujarat (Open 10 AM – 10 PM)';
+        showToast('Switched to Vapi City showroom');
+      }
+    }
+
+    function executePurchase() {
+      const btn = document.getElementById('btn-complete-purchase');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Securing Order...</span>';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        const modal = document.getElementById('success-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }, 900);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      if (!toast || !toastText) return;
+      toastText.textContent = msg;
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+      setTimeout(() => {
+        toast.style.transform = 'translateY(-6rem)';
+        toast.style.opacity = '0';
+      }, 3000);
+    }
+
+    // Mobile Menu Controller
+    function setupMobileMenu() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      const menuIcon = document.getElementById('mobile-menu-icon');
+      if (!menuBtn || !drawer) return;
+
+      function openMenu() {
+        backdrop.classList.remove('hidden');
+        void backdrop.offsetWidth;
+        backdrop.classList.remove('opacity-0');
+        backdrop.classList.add('opacity-100');
+        drawer.classList.remove('translate-x-full');
+        drawer.classList.add('translate-x-0');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        if (menuIcon) menuIcon.textContent = 'close';
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function closeMenu() {
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        drawer.classList.remove('translate-x-0');
+        drawer.classList.add('translate-x-full');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (menuIcon) menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+        setTimeout(() => {
+          backdrop.classList.add('hidden');
+        }, 300);
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setupMobileMenu();
+
+      // Read model and price from URL if passed from showroom
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const model = params.get('model');
+        const price = params.get('price');
+        if (model) {
+          const titleEl = document.querySelector('.bg-slate-50.border.border-slate-200 h3');
+          if (titleEl) titleEl.textContent = model;
+          const modalModel = document.getElementById('modal-phone-model');
+          if (modalModel) modalModel.textContent = model;
+        }
+        if (price) {
+          const numPrice = parseInt(price, 10);
+          if (!isNaN(numPrice) && numPrice > 0) {
+            const dueTotal = Math.max(1000, numPrice - 10000 - 49500);
+            const dueEl = document.querySelector('.text-2xl.sm\\:text-3xl.font-extrabold.text-slate-900.font-heading');
+            if (dueEl) dueEl.textContent = '₹' + dueTotal.toLocaleString('en-IN');
+            const payBtn = document.getElementById('btn-complete-purchase');
+            if (payBtn) payBtn.innerHTML = `<span class="material-symbols-outlined text-xl">lock</span><span>Pay ₹${dueTotal.toLocaleString('en-IN')} Securely</span>`;
+          }
+        }
+      } catch (e) {
+        console.warn('URL param parse error:', e);
+      }
+    });
+  </script>
+</body>
+</html>
